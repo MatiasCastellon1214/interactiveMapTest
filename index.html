@@ -81,6 +81,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script>         
 
+
+
             let coll = document.getElementsByClassName("collapsible");
             let i;
 
@@ -157,7 +159,6 @@
             zoomControl:false, maxZoom:28, minZoom:1
         })
         let hash = new L.Hash(map);
-
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         let autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
@@ -222,7 +223,6 @@
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
         function pop_jujuy_1(feature, layer) {
-
             let popupContent = '<table>\
                 </table>';
             let content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -307,7 +307,6 @@
         function style_BermejoInferior_2_0() {
             return {
                 pane: 'pane_BermejoInferior_2',
-
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -432,369 +431,12 @@
                         <th scope="row">Elevación Promedio</th>\
                         <td>' + (feature.properties['elev_prom'] !== null ? autolinker.link(feature.properties['elev_prom'].toLocaleString()) : '') + '</td>\
                     </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_SubCuencas_2_0(feature) {
-            switch(String(feature.properties['nombre'])) {
-                case 'Cuenca Alta Bermejo':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(206,59,169,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Alta del Río Juramento - Salado':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(168,88,237,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Bermejo Inferior':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(216,219,57,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca del Río Pilcomayo':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(222,33,109,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca del Río Zapaleri':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(25,211,168,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Endorreica':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(101,203,61,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Laguna de Guayatayoc':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(16,199,223,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Laguna de Pozuelos':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(90,228,99,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Laguna de Vilama':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(75,101,230,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Laguna Palar':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(64,25,238,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Mojotoro - Lavayen - San Francisco':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(196,36,217,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Salar de Cauchari':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(233,135,93,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Salar de Jama':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(143,201,42,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Salar de Olaroz':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(200,164,96,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Salar de Rincón':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(117,237,167,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Salinas Grandes de Jujuy y Salta':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(59,141,212,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Endorreica1':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(177,101,207,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Endorreica2':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(253,108,217,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Endorreica3':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(139,49,157,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Endorreica4':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(181,65,194,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Endorreica5':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(38,178,28,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Cuenca Endorreica6':
-                    return {
-                pane: 'pane_SubCuencas_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(149,38,183,1.0)',
-                interactive: true,
-            }
-                    break;
-            }
-        }
-        map.createPane('pane_SubCuencas_2');
-        map.getPane('pane_SubCuencas_2').style.zIndex = 402;
-        map.getPane('pane_SubCuencas_2').style['mix-blend-mode'] = 'normal';
-        var layer_SubCuencas_2 = new L.geoJson(json_SubCuencas_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_SubCuencas_2',
-            layerName: 'layer_SubCuencas_2',
-            pane: 'pane_SubCuencas_2',
-            onEachFeature: pop_SubCuencas_2,
-            style: style_SubCuencas_2_0,
-        });
-        bounds_group.addLayer(layer_SubCuencas_2);
-        function pop_CuencaCerradasdelaPuna_3(feature, layer) {
-            var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Rango de Elevación</th>\
                         <td>' + (feature.properties['rango_elev'] !== null ? autolinker.link(feature.properties['rango_elev'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            let content = removeEmptyRowsFromPopupContent(popupContent, feature);
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
 			});
@@ -868,7 +510,6 @@
 			});
 			layer.bindPopup(content, { maxHeight: 400 });
         }
-
 
         function style_Endorreica5_5_0() {
             return {
@@ -1105,7 +746,6 @@
 
 
         function pop_Endorreica1_9(feature, layer) {
-
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Nombre</th>\
@@ -1179,45 +819,6 @@
                         <th scope="row">Nombre</th>\
                         <td>' + (feature.properties['nombre'] !== null ? autolinker.link(feature.properties['nombre'].toLocaleString()) : '') + '</td>\
                     </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_CuencadelRoPilcomayo_5_0() {
-            return {
-                pane: 'pane_CuencadelRoPilcomayo_5',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(152,125,183,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_CuencadelRoPilcomayo_5');
-        map.getPane('pane_CuencadelRoPilcomayo_5').style.zIndex = 405;
-        map.getPane('pane_CuencadelRoPilcomayo_5').style['mix-blend-mode'] = 'normal';
-        var layer_CuencadelRoPilcomayo_5 = new L.geoJson(json_CuencadelRoPilcomayo_5, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_CuencadelRoPilcomayo_5',
-            layerName: 'layer_CuencadelRoPilcomayo_5',
-            pane: 'pane_CuencadelRoPilcomayo_5',
-            onEachFeature: pop_CuencadelRoPilcomayo_5,
-            style: style_CuencadelRoPilcomayo_5_0,
-        });
-        bounds_group.addLayer(layer_CuencadelRoPilcomayo_5);
-        map.addLayer(layer_CuencadelRoPilcomayo_5);
-        function pop_CuencadelRoJuramento_6(feature, layer) {
-            var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Área Km2</th>\
                         <td>' + (feature.properties['area km2'] !== null ? autolinker.link(feature.properties['area km2'].toLocaleString()) : '') + '</td>\
@@ -1285,9 +886,9 @@
             style: style_SalarDeRincn_10_0,
         });
         bounds_group.addLayer(layer_SalarDeRincn_10);
+        
 
-
-        function pop_RoZapaleri_11(feature, layer) {
+       function pop_RoZapaleri_11(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Nombre</th>\
@@ -2485,7 +2086,6 @@
             {label: '<img src="legend/CuencadelRoJuramento_20.png" /> Cuenca del Río Juramento', layer: layer_CuencadelRoJuramento_20},]},
         {label: '<img src="legend/jujuy_1.png" /> jujuy', layer: layer_jujuy_1},
         {label: "Google Satellite", layer: layer_GoogleSatellite_0},]
-
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
