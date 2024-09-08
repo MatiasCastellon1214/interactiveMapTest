@@ -8,16 +8,24 @@ const controlsContent = `
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-md-4 mb-2 mb-md-0">
-                        <label for="opacityStreamRange"><strong>Cursos de Agua:</strong></label>
-                        <input type="range" id="opacityStreamRange" class="form-range" min="0" max="1" step="0.1" value="1">
+                        <label for="opacityBasinRange"><strong>Cuencas:</strong></label>
+                        <input type="range" id="opacityBasinRange" class="form-range" min="0" max="1" step="0.1" value="1">
                     </div>
                     <div class="col-12 col-md-4 mb-2 mb-md-0">
                         <label for="opacitySubBasinRange"><strong>SubCuencas:</strong></label>
                         <input type="range" id="opacitySubBasinRange" class="form-range" min="0" max="1" step="0.1" value="1">
                     </div>
                     <div class="col-12 col-md-4 mb-2 mb-md-0">
-                        <label for="opacityBasinRange"><strong>Cuencas:</strong></label>
-                        <input type="range" id="opacityBasinRange" class="form-range" min="0" max="1" step="0.1" value="1">
+                        <label for="opacityStreamRange"><strong>Cursos de Agua:</strong></label>
+                        <input type="range" id="opacityStreamRange" class="form-range" min="0" max="1" step="0.1" value="1">
+                    </div>
+                    <div class="col-12 col-md-4 mb-2 mb-md-0">
+                        <label for="opacityEcoregionRange"><strong>Ecorregiones:</strong></label>
+                        <input type="range" id="opacityEcoregionRange" class="form-range" min="0" max="1" step="0.1" value="1">
+                    </div>
+                    <div class="col-12 col-md-4 mb-2 mb-md-0">
+                        <label for="opacitySoilTexturenRange"><strong>Textura del Suelo:</strong></label>
+                        <input type="range" id="opacitySoilTexturenRange" class="form-range" min="0" max="1" step="0.1" value="1">
                     </div>
                 </div>
             </div>

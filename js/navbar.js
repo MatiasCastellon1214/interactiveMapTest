@@ -36,36 +36,3 @@ const navbarContent = `
 
 const navbarContainer = document.querySelector('.navbar');
 navbarContainer.innerHTML = navbarContent;
-
-// Obtener referencia al enlace de Carrera
-//const carreraLink = document.getElementById('investigacionYProyectos');
-/*
-// Manejar el clic en el enlace de Carrera
-carreraLink.addEventListener('click', function(event) {
-  // Prevenir el comportamiento predeterminado del enlace
-  event.preventDefault();
-
-  // Obtener la posición vertical de la sección de Carrera
-  const carreraSection = document.getElementById('investigacionYProyectos-section');
-  const offsetTop = carreraSection.offsetTop;
-
-  // Desplazamiento suave a la sección de Carrera
-  window.scrollTo({
-    top: offsetTop,
-    behavior: 'smooth'
-  });
-});
-
-const footerLink = document.getElementById('contacto');
-
-footerLink.addEventListener('click', function(event){
-  event.preventDefault();
-
-  const footerSection = document.getElementById('footer-section');
-  const offsetTop = footerSection.offsetTop;
-
-  window.scrollTo({
-    top: offsetTop,
-    behavior: 'smooth'
-  });
-});*/

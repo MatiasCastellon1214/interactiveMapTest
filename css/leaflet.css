@@ -146,11 +146,9 @@
 .leaflet-control {
 	float: left;
 	clear: both;
-	
 	}
 .leaflet-right .leaflet-control {
 	float: right;
-	
 	}
 .leaflet-top .leaflet-control {
 	margin-top: 10px;
